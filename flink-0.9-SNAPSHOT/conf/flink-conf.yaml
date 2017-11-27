@@ -28,23 +28,23 @@ env.java.home: /usr/lib/jvm/java-7-oracle
 # Common
 #==============================================================================
 
-jobmanager.rpc.address: cloud-11
+#jobmanager.rpc.address: cloud-11
 
-jobmanager.rpc.port: 6002
+#jobmanager.rpc.port: 6002
 
-jobmanager.heap.mb: 1024
+#jobmanager.heap.mb: 1024
 
-taskmanager.heap.mb: 5000
+#taskmanager.heap.mb: 5000
 
-taskmanager.numberOfTaskSlots: 4 
+#taskmanager.numberOfTaskSlots: 4 
 
-parallelization.degree.default: 92
+#parallelization.degree.default: 92
 
-confined.recovery: false
+confined.recovery: false # confined recovery is enabled if it is true
 
 delta.checkpoint: 0
 
-replication.recovery: true
+replication.recovery: false # replica recovery is enabled if it is true
 
 #==============================================================================
 # Web Frontend
