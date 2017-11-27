@@ -2,22 +2,12 @@
 
 ## Systems
 
-### /flink-0.9-SNAPSHOT
-Modified flink system which has implemented the algorithms mentioned in the papers
+* **Flink**: ```/flink-0.9-SNAPSHOT``` includes a modified flink system which has implemented the algorithms mentioned in the papers
+* **Hadoop**: we suggest to deploy hadoop-2.4.1 HDFS to save the checkpoints and set a small block size so that the data would be partitioned locally
+* **Spark**: we suggest to emply spark-1.3.1-bin-hadoop2.6 to generate input dataset for K-Means 
+* **Procrustes**: ```procrustes-flink-1.0-SNAPSHOT.jar``` includes the pagerank, connected compoents and k-means implementations on Flink
 
-### procrustes-flink-1.0-SNAPSHOT.jar
-
-includes the pagerank, connected compoents and k-means implementations on Flink
-
-### /hadoop-2.4.1
-
-Only use the HDFS to save the checkpoints. 
-
-### /spark-1.3.1-bin-hadoop2.6
-
-Only use spark to generate input dataset for K-Means 
-
-## /Scripts
+## Scripts
 
 Shell scripts to drive the experiments (please ignore peel-xml)
 
@@ -27,7 +17,20 @@ Shell scripts to drive the experiments (please ignore peel-xml)
 
 *taskmanager.checkpoint.dir*: hdfs to save checkpoint
 
-## To submit jobs
+## Input Datasets
+
+For PageRank and Connected components, we use [WebGraph](http://law.di.unimi.it/datasets.php) as input dataset
+
+```bash
+ java -cp "*" it.unimi.dsi.webgraph.ArcListASCIIGraph -g BVGraph $input path$ $output path$
+ ```
+For K-Means, we use spark and procrustes to generate the dataset
+
+```bash
+./spark-submit --class eu.stratosphere.procrustes.datagen.spark.SparkClusterGenerator ../procrustes-datagen-1.0-SNAPSHOT.jar spark://localhost:port $#parallelism$ $#items$ file://clusters-D3-K3.csv hdfs://.../input/clusters
+ ```
+
+## Job Submission
 
 ### pagerank
 ```bash
