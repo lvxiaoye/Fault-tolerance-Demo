@@ -3,8 +3,8 @@
 ## Systems
 
 * **Flink**: ```/flink-0.9-SNAPSHOT``` includes a modified flink system which has implemented the algorithms mentioned in the papers
-* **Hadoop**: we suggest to deploy ```hadoop-2.4.1``` HDFS to save the checkpoints and set a small block size so that the data would be partitioned locally
-* **Spark**: we suggest to employ ```spark-1.3.1-bin-hadoop2.6``` to generate input dataset for K-means 
+* [**Hadoop**](/Hadoop/Hadoop.md): we suggest to deploy ```hadoop-2.4.1``` HDFS to save the checkpoints and set a small block size so that the data would be partitioned locally
+* [**Spark**](/Spark/Spark.md): we suggest to employ ```spark-1.3.1-bin-hadoop2.6``` to generate input dataset for K-means 
 * **Procrustes**: ```procrustes-flink-1.0-SNAPSHOT.jar``` includes the pagerank, connected compoents and k-means implementations on Flink
 
 ## Scripts
