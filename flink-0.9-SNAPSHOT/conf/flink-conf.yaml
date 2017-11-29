@@ -28,7 +28,7 @@ env.java.home: /usr/lib/jvm/java-7-oracle
 # Common
 #==============================================================================
 
-#jobmanager.rpc.address: cloud-11
+jobmanager.rpc.address: localhost
 
 #jobmanager.rpc.port: 6002
 
@@ -76,7 +76,7 @@ taskmanager.network.numberOfBuffers: 4000
 # If not specified, the system-specific Java temporary directory (java.io.tmpdir
 # property) is taken.
 #
-taskmanager.tmp.dirs: /data/peel/tmp/foo/1
+taskmanager.tmp.dirs: /tmp/data/1
 
 taskmanager.checkpoint.dir: hdfs://cloud-11:45010/checkpoint/
 
