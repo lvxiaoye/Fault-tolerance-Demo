@@ -32,9 +32,9 @@ jobmanager.rpc.address: localhost
 
 #jobmanager.rpc.port: 6002
 
-#jobmanager.heap.mb: 1024
+jobmanager.heap.mb: 64
 
-#taskmanager.heap.mb: 5000
+taskmanager.heap.mb: 200
 
 #taskmanager.numberOfTaskSlots: 4 
 
