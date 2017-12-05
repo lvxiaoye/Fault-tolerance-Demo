@@ -30,7 +30,7 @@ env.java.home: /usr/lib/jvm/java-7-oracle
 
 jobmanager.rpc.address: localhost
 
-#jobmanager.rpc.port: 6002
+jobmanager.rpc.port: 6002
 
 jobmanager.heap.mb: 64
 

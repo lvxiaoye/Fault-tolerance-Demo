@@ -44,30 +44,30 @@ For K-Means, we use spark and procrustes to generate the dataset
 
 ## Job Submission
 
-### pagerank
+### PageRank
 
-* **head checkpoint**
+* **Head checkpoint**
 ```bash
-/…/flink-0.9-SNAPSHOT/bin/flink run -v -c eu.stratosphere.procrustes.experiments.recovery.PageRank ${app.path.jobs}/procrustes-flink-1.0.SNAPSHOT.jar ${system.hadoop-2.path.input}/input ${system.hadoop-2.path.output}/output ${# of pages} ${# of iteration} ${# of checkpoint interval}
+/…/flink-0.9-SNAPSHOT/bin/flink run -v -c eu.stratosphere.procrustes.experiments.recovery.PageRank ${app.path.jobs}/procrustes-flink-1.0-SNAPSHOT.jar ${system.hadoop-2.path.input}/input ${system.hadoop-2.path.output}/output ${# of pages} ${# of iteration} ${# of checkpoint interval}
 ```
 
 Tips: checkpoint would be saved if ```${# of checkpoint interval}>0``` and there is no checkpoint if ```${# of checkpoint interval}=0```
 
-* **tail checkpoint**
+* **Tail checkpoint**
 ```bash
-/…/flink-0.9-SNAPSHOT/bin/flink run -v -c eu.stratosphere.procrustes.experiments.recovery.PageRankLateCpt ${app.path.jobs}/procrustes-flink-1.0.SNAPSHOT.jar ${system.hadoop-2.path.input}/input ${system.hadoop-2.path.output}/output ${# of pages} ${# of iteration} ${# of checkpoint interval}
+/…/flink-0.9-SNAPSHOT/bin/flink run -v -c eu.stratosphere.procrustes.experiments.recovery.PageRankLateCpt ${app.path.jobs}/procrustes-flink-1.0-SNAPSHOT.jar ${system.hadoop-2.path.input}/input ${system.hadoop-2.path.output}/output ${# of pages} ${# of iteration} ${# of checkpoint interval}
 ```
 
 ### Connected components
 
-* **head checkpoint**
+* **Head checkpoint**
 ```bash
-/…/flink-0.9-SNAPSHOT/bin/flink run -v -c eu.stratosphere.procrustes.experiments.recovery.ConnectedComponentsBulk ${app.path.jobs}/procrustes-flink-1.0.SNAPSHOT.jar ${system.hadoop-2.path.input}/webbase-raw ${system.hadoop-2.path.output}/concomp ${# of iteration} ${# of checkpoint interval}
+/…/flink-0.9-SNAPSHOT/bin/flink run -v -c eu.stratosphere.procrustes.experiments.recovery.ConnectedComponentsBulk ${app.path.jobs}/procrustes-flink-1.0-SNAPSHOT.jar ${system.hadoop-2.path.input}/webbase-raw ${system.hadoop-2.path.output}/concomp ${# of iteration} ${# of checkpoint interval}
 ```
 
-* **tail checkpoint**
+* **Tail checkpoint**
 ```bash
-/…/flink-0.9-SNAPSHOT/bin/flink run -v -c eu.stratosphere.procrustes.experiments.recovery.ConnectedComponentsBulkLateCpt ${app.path.jobs}/procrustes-flink-1.0.SNAPSHOT.jar ${system.hadoop-2.path.input}/webbase-raw ${system.hadoop-2.path.output}/concomp ${# of iteration} ${# of checkpoint interval}
+/…/flink-0.9-SNAPSHOT/bin/flink run -v -c eu.stratosphere.procrustes.experiments.recovery.ConnectedComponentsBulkLateCpt ${app.path.jobs}/procrustes-flink-1.0-SNAPSHOT.jar ${system.hadoop-2.path.input}/webbase-raw ${system.hadoop-2.path.output}/concomp ${# of iteration} ${# of checkpoint interval}
 ```
 
 ### K-Means
